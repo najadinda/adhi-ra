@@ -17,7 +17,9 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-
+use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\SelectColumn;
+use Filament\Tables\Filters\SelectFilter;
 
 class ProductsResource extends Resource
 {
@@ -27,7 +29,7 @@ class ProductsResource extends Resource
 
     protected static ?string $navigationLabel = 'All Products';
     
-    protected static ?string $navigationGroup = 'Products';
+    protected static ?string $navigationGroup = 'Management';
 
     public static function form(Form $form): Form
     {
@@ -48,6 +50,19 @@ class ProductsResource extends Resource
                 ->label('Stock'),
                 RichEditor::make('description')
                 ->label('Deskripsi'),
+                Select::make('category')
+                ->options([
+                    'Mesin Jahit & Aksesoris' => 'Mesin Jahit & Aksesoris',
+                    'Benang & Jarum' => 'Benang & Jarum',
+                    'Kain & Material' => 'Kain & Material',
+                    'Gunting & Pemotong' => 'Gunting & Pemotong',
+                    'Alat Ukur & Pola' => 'Alat Ukur & Pola',
+                    'Aksesoris Jahit' => 'Aksesoris Jahit',
+                    'DIY' => 'DIY',
+                    'Lem & Perekat' => 'Lem & Perekat'
+                ])
+                ->required()
+                ->label('Pilih Kategori')
             ]);
     }
 
@@ -68,9 +83,24 @@ class ProductsResource extends Resource
                 TextColumn::make('stock')
                 ->label('Stock')
                 ->searchable(),
+                TextColumn::make('category')
+                ->label('Kategori')
+                ->searchable(),
             ])
             ->filters([
-                //
+                SelectFilter::make('category')
+                ->label('Filter Kategori')
+                ->options([
+                    'Mesin Jahit & Aksesoris' => 'Mesin Jahit & Aksesoris',
+                    'Benang & Jarum' => 'Benang & Jarum',
+                    'Kain & Material' => 'Kain & Material',
+                    'Gunting & Pemotong' => 'Gunting & Pemotong',
+                    'Alat Ukur & Pola' => 'Alat Ukur & Pola',
+                    'Aksesoris Jahit' => 'Aksesoris Jahit',
+                    'DIY' => 'DIY',
+                    'Lem & Perekat' => 'Lem & Perekat'
+                ])
+                ->searchable(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
