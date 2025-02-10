@@ -58,7 +58,7 @@ class ProductsResource extends Resource
                     'Gunting & Pemotong' => 'Gunting & Pemotong',
                     'Alat Ukur & Pola' => 'Alat Ukur & Pola',
                     'Aksesoris Jahit' => 'Aksesoris Jahit',
-                    'DIY' => 'DIY',
+                    'Alat Tulis & DIY' => 'Alat Tulis & DIY',
                     'Lem & Perekat' => 'Lem & Perekat'
                 ])
                 ->required()
@@ -97,7 +97,7 @@ class ProductsResource extends Resource
                     'Gunting & Pemotong' => 'Gunting & Pemotong',
                     'Alat Ukur & Pola' => 'Alat Ukur & Pola',
                     'Aksesoris Jahit' => 'Aksesoris Jahit',
-                    'DIY' => 'DIY',
+                    'Alat Tulis & DIY' => 'Alat Tulis & DIY',
                     'Lem & Perekat' => 'Lem & Perekat'
                 ])
                 ->searchable(),

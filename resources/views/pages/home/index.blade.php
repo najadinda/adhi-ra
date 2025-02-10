@@ -1,3 +1,5 @@
-<div>
-    <!-- The whole future lies in uncertainty: live immediately. - Seneca -->
-</div>
+@extends('pages.home.index')
+
+@section('content')
+    <h1>hi</h1>
+@endsection
