@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Filters\SelectFilter;
 
 class UserResource extends Resource
 {
@@ -33,14 +35,19 @@ class UserResource extends Resource
                 ->label('Email'),
                 TextInput::make('password')
                     // ->required()
-                    ->password()
-                    ->confirmed()
-                    ->minLength(8)
-                    ->maxLength(255),
+                ->password()
+                ->confirmed()
+                ->minLength(8)
+                ->maxLength(255),
                 TextInput::make('password_confirmation')
                     // ->required()
-                    ->password()
-                    ->label('Confirm Password'),
+                ->password()
+                ->label('Confirm Password'),
+                Select::make('role')
+                ->options([
+                    'admin' => 'Admin',
+                    'user' => 'User',
+                ])
             ]);
     }
 
@@ -53,6 +60,9 @@ class UserResource extends Resource
                 ->searchable(),
                 TextColumn::make('email')
                 ->label('Email')
+                ->searchable(),
+                TextColumn::make('role')
+                ->label('Role')
                 ->searchable(),
             ])
             ->filters([

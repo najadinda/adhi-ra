@@ -88,6 +88,7 @@ class ProductsResource extends Resource
                 ->searchable(),
             ])
             ->filters([
+                Tables\Filters\TrashedFilter::make(),
                 SelectFilter::make('category')
                 ->label('Filter Kategori')
                 ->options([
@@ -105,7 +106,8 @@ class ProductsResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-                // Tables\Actions\ForceDeleteAction::make(),
+                Tables\Actions\ForceDeleteAction::make(),
+                Tables\Actions\RestoreAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -130,5 +132,13 @@ class ProductsResource extends Resource
             'create' => Pages\CreateProducts::route('/create'),
             'edit' => Pages\EditProducts::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes([
+                SoftDeletingScope::class,
+            ]);
     }
 }

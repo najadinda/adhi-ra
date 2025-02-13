@@ -14,9 +14,18 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                primary: '#599961',
+                secondary: '#00610B ',
+                white: '#fff',
+                black: '#000',
+            }
         },
     },
     plugins: [
         require('daisyui'),
     ],
+    daisyui: {
+        themes: ["light"], // Paksa menggunakan theme light
+      },
 };
