@@ -135,7 +135,7 @@
                         name="phone"
                         value="{{ old('phone') }}"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                        placeholder="Masukkan nmr telepn anda"
+                        placeholder="Masukkan nomor telepn anda"
                     />
             
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">

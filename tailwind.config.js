@@ -11,8 +11,12 @@ export default {
     ],
     theme: {
         extend: {
+            dropShadow: {
+                'custom': '-4px 4px 9px rgba(0, 0, 0, 0.25)',
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['Poppins', 'sans-serif'],
+                lexend: ['Lexend', 'sans-serif'],
             },
             colors: {
                 primary: '#599961',

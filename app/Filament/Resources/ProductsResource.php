@@ -25,7 +25,7 @@ class ProductsResource extends Resource
 {
     protected static ?string $model = Products::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     protected static ?string $navigationLabel = 'All Products';
     
@@ -43,12 +43,15 @@ class ProductsResource extends Resource
                 ->label('Nama Produk'),
                 TextInput::make('price')
                 ->required()
+                ->prefix('Rp')
                 ->label('Harga'),
                 TextInput::make('stock')
                 ->numeric()
+                ->prefix('Qty')
                 ->required()
                 ->label('Stock'),
                 RichEditor::make('description')
+                ->required()
                 ->label('Deskripsi'),
                 Select::make('category')
                 ->options([
@@ -81,7 +84,10 @@ class ProductsResource extends Resource
                 ->label('Harga')
                 ->searchable(),
                 TextColumn::make('stock')
-                ->label('Stock')
+                ->label('Stok')
+                ->searchable(),
+                TextColumn::make('description')
+                ->label('Deskripsi')
                 ->searchable(),
                 TextColumn::make('category')
                 ->label('Kategori')

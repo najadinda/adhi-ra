@@ -11,7 +11,7 @@
             </p>
         </div>
         
-        <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4" method="POST">
+        <form action="{{ route('auth') }}" class="mx-auto mb-0 mt-8 max-w-md space-y-4" method="POST">
             @method('post')
             @csrf
             {{-- Email --}}

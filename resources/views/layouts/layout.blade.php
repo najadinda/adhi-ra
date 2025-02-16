@@ -8,6 +8,7 @@
     {{-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script> --}}
     <link rel="icon" href="{{ asset('assets/site.png') }}" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
     @vite(['resources/js/app.js'])
 </head>

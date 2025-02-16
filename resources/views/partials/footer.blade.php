@@ -1,6 +1,6 @@
 <!-- resources/views/partials/footer.blade.php -->
 
-<footer class="bg-primary text-white py-8 h-80 content-center">
+<footer class="bg-primary text-white py-8 h-full lg:h-80 content-center">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
             <!-- Kolom 1: About Section -->
