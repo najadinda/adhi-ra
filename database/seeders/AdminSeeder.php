@@ -22,9 +22,9 @@ class AdminSeeder extends Seeder
                 'role' => 'admin'
             ],
             [
-                'name' => 'dinda',
-                'email' => 'dinda@gmail.com',
-                'password' => Hash::make('halohalobandung'),
+                'name' => 'dindaa',
+                'email' => 'ayudhya@gmail.com',
+                'password' => Hash::make('halosemua'),
                 'role' => 'user'
             ]
             // [

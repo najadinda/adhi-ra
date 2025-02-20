@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->decimal('total_harga');
-            $table->string('pembayaran');
-            $table->timestamp('tanggal_pemesanan');
-            $table->enum('status', ['sedang dibuat', 'sedang diantar', 'pesanan sukses']);
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->string('name');
+            $table->string('phone');
+            $table->text('address');
+            $table->unsignedInteger('total_amount');
+            $table->string('payment_method');
+            $table->enum('payment_status', ['menunggu', 'dibayar', 'dikembalikan'])->default('menunggu');
+            $table->dateTime('order_date')->default(now());
+            $table->enum('status', ['diproses', 'diantar', 'diterima', 'dibatalkan'])->default('diproses');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

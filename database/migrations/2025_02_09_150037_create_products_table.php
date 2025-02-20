@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('product_image');
             $table->string('product_name');
             $table->text('description')->nullable();
-            $table->decimal('price', 8, 3);
+            $table->unsignedInteger('price');
             $table->unsignedInteger('stock');
             $table->string('category')->nullable();
             $table->softDeletes();

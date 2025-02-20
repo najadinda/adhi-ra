@@ -4,7 +4,7 @@
         
     <div class="lg:mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="max-w-lg text-center">
-            <h1 class="text-2xl font-bold sm:text-3xl">Selamat Datang Kembali</h1>
+            <h1 class="text-2xl font-bold sm:text-3xl">Selamat Datang</h1>
         
             <p class="mt-4 text-gray-500">
                 Mulailah kembali petualangan kreatif Anda. Login sekarang untuk melanjutkan eksplorasi alat dan tutorial jahit yang tak terbatas.
@@ -61,7 +61,7 @@
                         name="password"
                         value="{{ old('password') }}"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                        placeholder="Enter password"
+                        placeholder="Masukkan password anda"
                     />
             
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">

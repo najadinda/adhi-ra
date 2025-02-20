@@ -52,6 +52,7 @@ class ProductsResource extends Resource
                 ->label('Stock'),
                 RichEditor::make('description')
                 ->required()
+                ->dehydrateStateUsing(fn ($state) => strip_tags($state))
                 ->label('Deskripsi'),
                 Select::make('category')
                 ->options([
@@ -88,6 +89,7 @@ class ProductsResource extends Resource
                 ->searchable(),
                 TextColumn::make('description')
                 ->label('Deskripsi')
+                ->formatStateUsing(fn ($state) => strip_tags($state))
                 ->searchable(),
                 TextColumn::make('category')
                 ->label('Kategori')
